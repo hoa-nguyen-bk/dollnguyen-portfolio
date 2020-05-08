@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", "Times New Roman", sans-serif;
+}
+/* import font  */
+@font-face {
+  font-family: Roboto;
+  src: url(./../fonts/Roboto/Roboto-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(./../fonts/Roboto/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+
+a {
+  transition: all 0.2s;
+  color: white;
+}
+a:hover,
+a:active,
+a:focus {
+  opacity: 0.5;
+  color: white;
+}
+
+/* how to make your mouse circle */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  height: 50px;
+  width: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 3000;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.lead {
+  font-size: 1.5rem;
+}
+
+.navbar {
+  position: absolute;
+  left: -250px;
+  z-index: 3;
+  display: flex;
+  width: 10%;
+  height: 100%;
+  padding-left: 20px;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+}
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.hamb {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+  z-index: 20;
+  font-size: 2.5em;
+}
+.red {
+  /* visibility: visible !important; */
+  color: red !important;
+}
+/* nền bong bóng */
+#bubble {
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  position: fixed;
+  display: none;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+}
+.navbar ul li a {
+  text-transform: uppercase;
+  color: #f4f4f4;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.navbar ul li a:hover {
+  transform: translate(5px);
+  text-shadow: 5px 0px 1px #14afafab;
+}
+
+/*
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+
+.navbar ul li a:hover {
+  color: skyblue;
+}
+*/
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+/* Section Images */
+
+/* home */
+section#home {
+  position: relative;
+  background-color: grey;
+}
+.myVideo {
+  position: absolute;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#home .avatar {
+  width: 170px;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-image: url("./../imgs/c86d9d93005205.5e597c1a18c8c.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.moon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  opacity: 0.29;
+  margin: 0 30px;
+  border-radius: 50%;
+}
+.moonchild {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.left .moonchild:first-child {
+  background-color: white;
+  transform: translate(16px);
+}
+
+.left .moonchild:nth-child(1) {
+  transform: translate(-16px);
+  box-shadow: 16px 0 0 0 #14afaf;
+}
+
+.moon.right {
+  margin-left: 50px;
+}
+.right .moonchild:first-child {
+  background-color: #14afaf;
+}
+
+.right .moonchild:last-child {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 150px;
+  opacity: 0.5;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-20px);
+}
+
+.text {
+  position: absolute;
+  top: 60%;
+  color: white;
+}
+h2 {
+  font-weight: bold;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.815);
+  text-shadow: 3px 0px 1px #14afafab;
+  letter-spacing: 0.1em;
+}
+
+/* about */
+section#about {
+  position: relative;
+  background-color: #171717;
+}
+
+#about .moon {
+  opacity: 1;
+  margin-right: 7vw;
+}
+
+#about .moon .moonchild {
+  opacity: 0.29;
+  transition: all 0.2s ease;
+}
+#about .left .moonchild:first-child {
+  opacity: 0.1;
+  background-color: transparent;
+  
+}
+#about .moon:hover .moonchild:first-child {
+  transform: translate(15px);
+}
+#about .left .moonchild:nth-child(2) {
+  background-color: #14afaf;
+  transform: translate(-16px);
+  opacity: 1;
+}
+#about .moon:hover .moonchild:nth-child(2){
+  transform: translate(0px);
+  animation-delay: 0.2s;
+}
+
+#about .left .moonchild:nth-child(3) {
+  transform: translate(-32px);
+  background-image: url("./../imgs/c86d9d93005205.5e597c1a18c8c.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  opacity: 1;
+}
+#about .moon:hover .moonchild:nth-child(3) {
+  transform: translate(-25px);
+  animation-delay: 0.4s;
+}
+#about .left .moonchild:last-child {
+  background-color: white;
+  transform: translate(-50px);
+}
+#about .moon:hover .moonchild:last-child{
+  background-color: transparent;
+  animation-delay: 0.6;
+}
+#about .center {
+  display: flex;
+  align-self: center;
+}
+#about .center .moonchild {
+  background-color: white;
+  opacity: 0.07;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+#about .center .moonchild:first-child {
+  transform: translate(-35%);
+}
+#about .center .moonchild:last-child {
+  transform: translate(35%) scale(0.85);
+}
+#about .right .moonchild {
+  background-color: transparent;
+  box-shadow: 30px 0 0 0 #14afaf;
+}
+#about .text {
+  width: 36vw;
+  text-align: left;
+  right: 10%;
+  top: 0;
+}
+
+section#service {
+  background: url("https://source.unsplash.com/K2tdx2mFDHc/1600x900") no-repeat center center/cover;
+}
+
+section#contact {
+  background: url("https://source.unsplash.com/2aAHlfDOhJM/1600x900") no-repeat center center/cover;
+}
+
+@media screen and (max-width: 481px){
+  .hidden-xs{
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

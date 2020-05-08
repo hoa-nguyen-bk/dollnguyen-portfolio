@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <!-- Bootstrap -->
+  <link href="./css/bootstrap.css" rel="stylesheet">
+  <!-- font awesome  -->
+  <link rel="stylesheet" type="text/css" href="fontawesome5.0.2\web-fonts-with-css\css\fontawesome-all.min.css">
+  <!-- my style  -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- mouse effect  -->
+  <div class="cursor"></div>
+
+  <!-- navbar  -->
+  <nav role="navigation" class="navbar navbar-inverse" id="mainnav">
+    <ul class="nav navbar-nav gav">
+      <li><a href="#home">myname</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#service">Skill</a></li>
+      <li><a href="#contact">Portfolio</a></li>
+    </ul>
+  </nav>
+  <!-- navbar hambuger -->
+  <div class="hamb">
+    <a href="#"><i class="fa fa-bars"></i></a>
+  </div>
+  <canvas id="bubble"></canvas>
+
+
+  <!-- home  -->
+  <div class="container">
+    <section id="home">
+      <!-- The video -->
+      <video autoplay muted loop class="myVideo">
+        <source src="./video/demo.mp4" type="video/mp4">
+      </video>
+      <div class="content">
+        <div class="moon left move hidden-xs" data-speed="1">
+          <div class="moonchild"></div>
+          <div class="moonchild"></div>
+        </div>
+        <div class="avatar move" data-speed="-1"></div>
+        <div class="moon right move" data-speed="1">
+          <div class="moonchild"></div>
+          <div class="moonchild"></div>
+        </div>
+      </div>
+      <div class="text">
+        <h2>Myname</h2>
+        <p>creative designer</p>
+      </div>
+    </section>
+
+    <!-- about section  -->
+    <section id="about">
+      <div class="content">
+        <div class="moon left move" data-speed="1">
+          <div class="moonchild"></div>
+          <div class="moonchild"></div>
+          <div class="moonchild"></div>
+          <div class="moonchild"></div>
+        </div>
+        <div class="moon center move" data-speed="-1">
+          <div class="moonchild"></div>
+          <div class="moonchild"></div>
+        </div>
+        <div class="moon right move" data-speed="1">
+          <div class="moonchild"></div>
+        </div>
+        <div class="text move" data-speed="-2">
+          <h2>Hello,</h2>
+          <div id="mytypingText"></div>
+        </div>
+      </div>
+    </section>
+    <section id="service">
+      <h1>Service</h1>
+      <p class="lead slideanim">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+    </section>
+    <section id="contact">
+      <h1>Contact</h1>
+      <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+    </section>
+  </div>
+  <!-- jquery -->
+  <script src='./js/jquery-1.11.3.min.js'></script>
+  <script src="./js/jquery-ui-1.12.1.min.js"></script>
+  <!-- tween max  -->
+  <script src="GS/TweenMax.min.js"></script>
+  <script src="./GS/plugins/GsapLatestBeta.min.js"></script>
+  <script>
+
+    // -------------------mouse (greensock)-----------------
+    var cursor = $(".cursor"),
+      tl = gsap.timeline({ paused: true });
+
+    gsap.set(cursor, {
+      xPercent: -50,
+      yPercent: -50
+    });
+
+    function moveCircle(e) {
+      gsap.to(cursor, {
+        duration: 0.3,
+        x: e.clientX,
+        y: e.clientY
+      });
+    }
+
+    $(window).on("mousemove", moveCircle);
+    //------------end mouse------------------
+
+
+    //-----------------effect background of mouse------------
+    document.addEventListener('mousemove', parallax);
+    function parallax(e) {
+      this.querySelectorAll('.move').forEach(layer => {
+        var speed = layer.getAttribute('data-speed');
+        var x = (window.innerWidth - e.pageX * speed) / 100;
+        var y = (window.innerWidth - e.pageY * speed) / 100;
+        layer.style.transform = `translate(${x}px,${y}px)`;
+      })
+    }
+    //------------end effect background------------------
+
+
+    //-------------------effect navigator hide and show-------------------------
+    $(document).ready(function () {
+      var F = 1;
+      $(".hamb").click(function () {
+        if (F === 1) {
+          F = 0;
+          //hiện navigator
+          $(".navbar").animate({ left: 0 });
+          $("#bubble").fadeIn();
+        }
+        else {
+          F = 1;
+          //ẩn navigator
+          $(".navbar").animate({ left: -250 });
+          $("#bubble").fadeOut();
+        }
+      })
+
+    })
+
+    //------------------end effect----------------------
+
+
+    //-----------------effect snow----------------------
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var canvas = document.getElementById('bubble');
+    var ctx = canvas.getContext('2d'),
+      rate = 60,
+      arc = 100,
+      time,
+      count,
+      size = 5,
+      speed = 15,
+      lights = new Array,
+      colors = ['#ffffff', '#1f2839', '#14afaf'];
+
+    canvas.setAttribute('width', w);
+    canvas.setAttribute('height', h);
+
+    function init() {
+      time = 0;
+      count = 0;
+
+      for (var i = 0; i < arc; i++) {
+        lights[i] = {
+          x: Math.ceil(Math.random() * w),
+          y: Math.ceil(Math.random() * h),
+          toX: Math.random() * 5 + 1,
+          toY: Math.random() * 5 + 1,
+          c: colors[Math.floor(Math.random() * colors.length)],
+          size: Math.random() * size
+        }
+      }
+    }
+
+    function bubble() {
+      ctx.clearRect(0, 0, w, h);
+
+      for (var i = 0; i < arc; i++) {
+        var li = lights[i];
+
+        ctx.beginPath();
+        ctx.arc(li.x, li.y, li.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = li.c;
+        ctx.fill();
+
+        li.x = li.x + li.toX * (time * 0.05);
+        li.y = li.y + li.toY * (time * 0.05);
+
+        if (li.x > w) { li.x = 0; }
+        if (li.y > h) { li.y = 0; }
+        if (li.x < 0) { li.x = w; }
+        if (li.y < 0) { li.y = h; }
+      }
+      if (time < speed) {
+        time++;
+      }
+      timerID = setTimeout(bubble, 1000 / rate);
+    }
+    //navigation
+    var animation = 'easeOutCubic';
+    delay = 60;
+    init();
+    bubble();
+    //-------------------end effect snow---------------
+
+
+    //--------------------- typing text---------------------
+    var inputBox = document.querySelector("#mytypingText")
+
+    var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer';
+
+    var myArray = myString.split("");
+
+    var loopTimer;
+
+    var frameLoop = function () {
+      if (myArray.length > 0) {
+        inputBox.innerHTML += myArray.shift();
+      } else {
+        clearTimeout(loopTimer);
+      }
+      var loopTimer = setTimeout("frameLoop()", 50);
+    }
+    frameLoop();
+    //-----------------------end typing text----------------------
+
+
+    $(window).scroll(function () {
+      var aboutTop = $('#about').offset().top - window.innerHeight;
+      console.log(aboutTop);
+
+      if ($(window).scrollTop() > aboutTop) {
+        frameLoop();
+      } else {
+
+      }
+    })
+
+    var tl = new TimelineMax({ paused: true })
+    tl.to(".hamb", 1, { "scale": 0.3 })
+
+    var maxDistance = 200;
+
+    window.addEventListener("scroll", function () {
+      var yPos = window.scrollY;
+      tl.progress(yPos / maxDistance);
+    });
+
+  </script>
+
+</body>
+
+</html>
