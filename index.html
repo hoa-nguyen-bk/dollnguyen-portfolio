@@ -145,43 +145,6 @@
   <!-- <script src="./GS/plugins/GsapLatestBeta.min.js"></script> -->
   <script>
 
-    // -------------------mouse (greensock)-----------------
-    /*
-    var cursor = $(".cursor"),
-      tl = gsap.timeline({ paused: true });
-
-    gsap.set(cursor, {
-      xPercent: -50,
-      yPercent: -50
-    });
-
-    function moveCircle(e) {
-      gsap.to(cursor, {
-        duration: 0.3,
-        x: e.clientX,
-        y: e.clientY
-      });
-    }
-
-    $(window).on("mousemove", moveCircle);
-    */
-    //------------end mouse------------------
-
-
-    //-----------------effect background of mouse------------
-    /*
-    document.addEventListener('mousemove', parallax);
-    function parallax(e) {
-      this.querySelectorAll('.move').forEach(layer => {
-        var speed = layer.getAttribute('data-speed');
-        var x = (window.innerWidth - e.pageX * speed) / 100;
-        var y = (window.innerWidth - e.pageY * speed) / 100;
-        layer.style.transform = `translate(${x}px,${y}px)`;
-      })
-    }
-    */
-    //------------end effect background------------------
-
 
     //-------------------effect navigator hide and show-------------------------
     $(document).ready(function () {
@@ -233,19 +196,18 @@
 
 
       //chức năng giống slide anim
-      /*
+      
       $(window).addEventListener("scroll", function () {
         var aboutTop = $('#about').offset().top - window.innerHeight;
         console.log(aboutTop);
 
         if ($(window).scrollTop() > 100) {
+          //code ko chạy
           frameLoop();
-          // $('.hamb').addClass('red');
         } else {
-          $('.hamb').removeClass('red');
         }
       })
-      */
+      
     })
 
     //------------------end effect----------------------
