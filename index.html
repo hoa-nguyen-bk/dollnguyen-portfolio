@@ -79,8 +79,58 @@
       </div>
     </section>
     <section id="service">
-      <h1>Service</h1>
-      <p class="lead slideanim">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+      <h2>tools</h2>
+      <div class="myrow">
+        <div class="mycol">
+          <div class="logo-tools" id="ps">
+            <p>Ps</p>
+          </div>
+          <div class="progress-bar">
+            <div class="label" data-count="60">0</div>
+            <div class="line" style="width:500px">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="mycol" id="ai">
+          <div class="logo-tools">
+            <p>Ai</p>
+          </div>
+          <div class="percent" data-count="80"></div>
+
+        </div>
+        <div class="mycol" id="xs">
+          <div class="logo-tools">
+            <p>Xd</p>
+          </div>
+          <div class="percent" data-count="70"></div>
+
+        </div>
+      </div>
+      <h2>skills</h2>
+      <div class="myrow">
+        <div class="mycol">
+          <ul>
+            <li>Creativity</li>
+            <li>Communication</li>
+            <li>Typography</li>
+          </ul>
+        </div>
+        <div class="mycol">
+          <ul>
+            <li>Interactive media</li>
+            <li>Coding</li>
+            <li>Branding</li>
+          </ul>
+        </div>
+        <div class="mycol">
+          <ul>
+            <li>Delivering</li>
+            <li>Presentation</li>
+            <li>Typography</li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section id="contact">
       <h1>Contact</h1>
@@ -92,10 +142,11 @@
   <script src="./js/jquery-ui-1.12.1.min.js"></script>
   <!-- tween max  -->
   <script src="GS/TweenMax.min.js"></script>
-  <script src="./GS/plugins/GsapLatestBeta.min.js"></script>
+  <!-- <script src="./GS/plugins/GsapLatestBeta.min.js"></script> -->
   <script>
 
     // -------------------mouse (greensock)-----------------
+    /*
     var cursor = $(".cursor"),
       tl = gsap.timeline({ paused: true });
 
@@ -113,10 +164,12 @@
     }
 
     $(window).on("mousemove", moveCircle);
+    */
     //------------end mouse------------------
 
 
     //-----------------effect background of mouse------------
+    /*
     document.addEventListener('mousemove', parallax);
     function parallax(e) {
       this.querySelectorAll('.move').forEach(layer => {
@@ -126,6 +179,7 @@
         layer.style.transform = `translate(${x}px,${y}px)`;
       })
     }
+    */
     //------------end effect background------------------
 
 
@@ -147,6 +201,51 @@
         }
       })
 
+      $(window).mousemove(function (e) {
+
+        var timeline = new TimelineMax();
+        var mX = e.pageX;
+        var mY = e.pageY;
+        var x = (window.innerWidth - mX) / 100;
+        var y = (window.innerHeight - mY) / 100;
+        //mouse cursor
+        timeline.set(".cursor", { left: mX, top: mY, delay: 0.08 });
+        //background effect
+        timeline.set(".moon", { xPercent: x, yPercent: y });
+        timeline.set(".avatar", { xPercent: -x, yPercent: -y })
+
+      })
+
+      //thanh progress
+      var i = 0;
+      jQuery('#ps').hover(function () {
+        var t = setInterval(function () {
+          if (i < 500) {
+            i++;
+            $(".label").html(i);
+          } else {
+            clearInterval(t);
+          }
+        })
+      }, function () {
+
+      })
+
+
+      //chức năng giống slide anim
+      /*
+      $(window).addEventListener("scroll", function () {
+        var aboutTop = $('#about').offset().top - window.innerHeight;
+        console.log(aboutTop);
+
+        if ($(window).scrollTop() > 100) {
+          frameLoop();
+          // $('.hamb').addClass('red');
+        } else {
+          $('.hamb').removeClass('red');
+        }
+      })
+      */
     })
 
     //------------------end effect----------------------
@@ -218,7 +317,7 @@
 
 
     //--------------------- typing text---------------------
-    var inputBox = document.querySelector("#mytypingText")
+    var inputBox = document.querySelector("#mytypingText");
 
     var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer';
 
@@ -234,23 +333,13 @@
       }
       var loopTimer = setTimeout("frameLoop()", 50);
     }
-    frameLoop();
+    // frameLoop();
     //-----------------------end typing text----------------------
 
 
-    $(window).scroll(function () {
-      var aboutTop = $('#about').offset().top - window.innerHeight;
-      console.log(aboutTop);
-
-      if ($(window).scrollTop() > aboutTop) {
-        frameLoop();
-      } else {
-
-      }
-    })
-
     var tl = new TimelineMax({ paused: true })
     tl.to(".hamb", 1, { "scale": 0.3 })
+
 
     var maxDistance = 200;
 
@@ -258,6 +347,8 @@
       var yPos = window.scrollY;
       tl.progress(yPos / maxDistance);
     });
+
+
 
   </script>
 

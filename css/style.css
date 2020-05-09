@@ -33,6 +33,7 @@ a:focus {
   position: fixed;
   top: 0;
   left: 0;
+  transform: translate(-50%, -50%);
   pointer-events: none;
   height: 50px;
   width: 50px;
@@ -40,6 +41,7 @@ a:focus {
   border-radius: 50%;
   background-color: transparent;
   z-index: 3000;
+  /* transition: .1s; */
 }
 
 body {
@@ -68,7 +70,7 @@ body {
 .navbar {
   position: absolute;
   left: -250px;
-  z-index: 3;
+  z-index: 10;
   display: flex;
   width: 10%;
   height: 100%;
@@ -89,6 +91,7 @@ body {
   left: 40px;
   z-index: 20;
   font-size: 2.5em;
+  color: white;
 }
 .red {
   /* visibility: visible !important; */
@@ -114,7 +117,7 @@ body {
 }
 
 .navbar ul li a:hover {
-  transform: translate(5px);
+  transform: translate(10px);
   text-shadow: 5px 0px 1px #14afafab;
 }
 
@@ -258,7 +261,6 @@ section#about {
 #about .left .moonchild:first-child {
   opacity: 0.1;
   background-color: transparent;
-  
 }
 #about .moon:hover .moonchild:first-child {
   transform: translate(15px);
@@ -268,7 +270,7 @@ section#about {
   transform: translate(-16px);
   opacity: 1;
 }
-#about .moon:hover .moonchild:nth-child(2){
+#about .moon:hover .moonchild:nth-child(2) {
   transform: translate(0px);
   animation-delay: 0.2s;
 }
@@ -289,7 +291,7 @@ section#about {
   background-color: white;
   transform: translate(-50px);
 }
-#about .moon:hover .moonchild:last-child{
+#about .moon:hover .moonchild:last-child {
   background-color: transparent;
   animation-delay: 0.6;
 }
@@ -321,16 +323,128 @@ section#about {
   top: 0;
 }
 
+/* service section  */
 section#service {
-  background: url("https://source.unsplash.com/K2tdx2mFDHc/1600x900") no-repeat center center/cover;
+  text-align: left;
+  align-items: flex-start;
+  padding-left: 20vw;
+  position: relative;
+  background-color: black;
+}
+section#service::before{
+  background: url(./../imgs/697be17a205a393d33de36f56ad1b867_skull-butterfly-gif-shared-by-amyjames-on-we-heart-it_800-884.gif) no-repeat center center/cover;
+  filter: invert(100%);
+  content: "";
+  width: 30%;
+  height: 30%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+}
+#service .myrow{
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+}
+#service .mycol{
+  width: 30%;
+  padding-right: 40px;
+}
+#service h2 {
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+#service .logo-tools {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  box-shadow: 3px -3px 0 0 #14afaf, 6px -6px 0 0 #14afaf3b;
+  margin-bottom: 20px;
+  z-index: 1;
+  transition: all .2s ease;
+  font-size: 2.5rem;
+}
+#service .logo-tools:hover{
+  box-shadow: 6px -6px 0 0 #14afaf, 12px -12px 0 0 #14afaf3b;
+  font-size: 2rem;
+}
+#service .logo-tools p {
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.percent{
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background-color:  white;
+}
+.percent::after{
+  position: absolute;
+  content: "";
+  background-color: #14afaf;
+  width: 65%;
+  height: 10px;
+}
+.mycol ul{
+  list-style-type: none;
+  font-size: 1.5rem;
+  line-height: 2;
+}
+.mycol li{
+  transition: all .2s ease;
+}
+.mycol li:hover{
+  transform: translate(10px);
+}
+
+
+.progress-bar{
+  width: 100%;
+  height: 10px;
+  position: relative; 
+  background: #e8e8e8;
+
+}
+
+.progress-bar .line{
+  background: #e8e8e8;
+
+}
+
+.progress-bar .label{
+  font-size: 30px;
+}
+
+.progress-bar > .line > span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background:  #14afaf;
+}
+
+
+@keyframes animationLoaded{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
 }
 
 section#contact {
   background: url("https://source.unsplash.com/2aAHlfDOhJM/1600x900") no-repeat center center/cover;
 }
 
-@media screen and (max-width: 481px){
-  .hidden-xs{
+@media screen and (max-width: 481px) {
+  .hidden-xs {
     display: none !important;
     visibility: hidden;
     opacity: 0;
