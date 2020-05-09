@@ -19,10 +19,11 @@
   <!-- navbar  -->
   <nav role="navigation" class="navbar navbar-inverse" id="mainnav">
     <ul class="nav navbar-nav gav">
-      <li><a href="#home">myname</a></li>
+      <li><a href="#home">Thao Ngan</a></li>
       <li><a href="#about">About me</a></li>
       <li><a href="#service">Skill</a></li>
-      <li><a href="#contact">Portfolio</a></li>
+      <li><a href="#product">Product</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
   <!-- navbar hambuger -->
@@ -51,7 +52,7 @@
         </div>
       </div>
       <div class="text">
-        <h2>Myname</h2>
+        <h2>Thao Ngan</h2>
         <p>creative designer</p>
       </div>
     </section>
@@ -78,6 +79,8 @@
         </div>
       </div>
     </section>
+
+    <!-- service  -->
     <section id="service">
       <h2>tools</h2>
       <div class="myrow">
@@ -86,7 +89,7 @@
             <p>Ps</p>
           </div>
           <div class="progress-bar">
-            <div class="label" data-count="60">0</div>
+            <!-- <div class="label" data-count="60">0</div> -->
             <div class="line" style="width:500px">
               <span></span>
             </div>
@@ -96,15 +99,18 @@
           <div class="logo-tools">
             <p>Ai</p>
           </div>
-          <div class="percent" data-count="80"></div>
+          <div class="percent">
+            <span style="width: 95%;"></span>
+          </div>
 
         </div>
         <div class="mycol" id="xs">
           <div class="logo-tools">
             <p>Xd</p>
           </div>
-          <div class="percent" data-count="70"></div>
-
+          <div class="percent">
+            <span  style="width: 85%;"></span>
+          </div>
         </div>
       </div>
       <h2>skills</h2>
@@ -132,6 +138,59 @@
         </div>
       </div>
     </section>
+
+    <!-- product  -->
+    <section id="product">
+      <!-- khi hover vào thì video con bướm sẽ chạy -->
+      <div class="btf">
+        <div class="text">
+          <h2>Logo</h2>
+          <p>Tiniworld</p>
+        </div>
+      </div>
+      <div class="btf">
+        <img class="btf-img" src="./imgs/butterfly.png"/>
+        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+      </div>
+      <div class="btf">
+        <div class="text">
+          <h2>Logo</h2>
+          <p>NMV</p>
+        </div>
+      </div>
+      <div class="btf">
+        <img class="btf-img" src="./imgs/butterfly.png"/>
+        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+      </div>
+      <div class="btf">
+        <div class="text">
+          <h2>web</h2>
+          <p>SMLP shop</p>
+        </div>
+      </div>
+      <div class="btf">
+        <img class="btf-img" src="./imgs/butterfly.png"/>
+        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+      </div>
+      <div class="btf">
+        <div class="text">
+          <h2>banner</h2>
+          <p>SMLP shop</p>
+        </div>
+      </div>
+      <div class="btf">
+        <img class="btf-img" src="./imgs/butterfly.png"/>
+        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+      </div>
+      <div class="btf">
+        <div class="text">
+          <h2>card</h2>
+          <p>Flower shop</p>
+        </div>
+      </div>
+    </section>
+
+
     <section id="contact">
       <h1>Contact</h1>
       <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
@@ -142,7 +201,6 @@
   <script src="./js/jquery-ui-1.12.1.min.js"></script>
   <!-- tween max  -->
   <script src="GS/TweenMax.min.js"></script>
-  <!-- <script src="./GS/plugins/GsapLatestBeta.min.js"></script> -->
   <script>
 
 
@@ -163,6 +221,10 @@
           $("#bubble").fadeOut();
         }
       })
+      $(".nav li a").click(function () {
+        $(".navbar").animate({ left: -250 });
+        $("#bubble").fadeOut();
+      })
 
       $(window).mousemove(function (e) {
 
@@ -180,34 +242,37 @@
       })
 
       //thanh progress
+      /*
       var i = 0;
-      jQuery('#ps').hover(function () {
+      jQuery("#ps").hover(function () {
         var t = setInterval(function () {
-          if (i < 500) {
+          if (i < 100) {
             i++;
             $(".label").html(i);
+            $(".percent > span").width(0).animate({width: i + "%"});
           } else {
             clearInterval(t);
           }
-        })
+        }, 0)
       }, function () {
-
+// hover nhận 2 callback function, function đầu tiên khi hover vào và thứ hai hover ra 
       })
-
+*/
 
       //chức năng giống slide anim
-      
-      $(window).addEventListener("scroll", function () {
+/*
+      $(window).scroll(function(){
         var aboutTop = $('#about').offset().top - window.innerHeight;
-        console.log(aboutTop);
+        console.log(window.innerHeight);
 
         if ($(window).scrollTop() > 100) {
-          //code ko chạy
+          //ko chạy hàm frameLoop
           frameLoop();
         } else {
+
         }
       })
-      
+*/
     })
 
     //------------------end effect----------------------
@@ -298,9 +363,6 @@
     // frameLoop();
     //-----------------------end typing text----------------------
 
-
-    var tl = new TimelineMax({ paused: true })
-    tl.to(".hamb", 1, { "scale": 0.3 })
 
 
     var maxDistance = 200;
