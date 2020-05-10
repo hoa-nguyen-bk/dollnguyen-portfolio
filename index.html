@@ -420,7 +420,7 @@
         } else {
           clearInterval(loopTimer);
         }
-        var loopTimer = setInterval(frameLoop, 500);
+        // var loopTimer = setInterval(frameLoop, 500);
       }
 
       //-----------------------end typing text----------------------//
@@ -428,7 +428,7 @@
       document.addEventListener('scroll', function () {
         if ($('#bodyer').scrollTop() > 270) {
           // pause = false;
-          frameLoop();
+        var loopTimer = setInterval(frameLoop, 500);
 
         } else {
           // pause = true;
