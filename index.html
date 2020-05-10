@@ -8,19 +8,21 @@
   <link href="./css/bootstrap.css" rel="stylesheet">
   <!-- font awesome  -->
   <link rel="stylesheet" type="text/css" href="fontawesome5.0.2\web-fonts-with-css\css\fontawesome-all.min.css">
-  <!-- banner style  -->
-  <link rel="stylesheet" href="./css/banner-style.css">
 
   <!-- my style  -->
   <link rel="stylesheet" href="./css/style.css">
 
+  <!-- banner style  -->
+  <link rel="stylesheet" href="./css/banner-style.css">
 </head>
 
 <body>
   <!-- video intro  -->
-  <!-- <video autoplay muted class="intro-video">
-    <source src="./video/intro video.mp4" type="video/mp4">
-  </video> -->
+ <!-- <div class="intro">
+   <video autoplay muted class="intro-video">
+     <source src="./video/intro video.mp4" type="video/mp4">
+   </video>
+ </div>  -->
 
   <!-- mouse effect  -->
   <div class="cursor"></div>
@@ -29,7 +31,7 @@
   <!-- navbar  -->
   <nav role="navigation" class="navbar navbar-inverse" id="mainnav">
     <ul class="nav navbar-nav gav">
-      <li><a href="#home">myname</a></li>
+      <li><a href="#home">thao ngan</a></li>
       <li><a href="#about">About me</a></li>
       <li><a href="#service">Skill</a></li>
       <li><a href="#product">Products</a></li>
@@ -65,7 +67,7 @@
         </div>
       </div>
       <div class="text">
-        <h2>myname</h2>
+        <h2>thao ngan</h2>
         <p>creative designer</p>
       </div>
     </section>
@@ -274,33 +276,34 @@
           <img src="./imgs/Bootstrap-Logo.png" alt="" />
           <img src="./imgs/css3.svg" alt="" />
           <img src="./imgs/HTML5_Logo.svg" alt="" />
+          <img src="./imgs/greensock.png" alt="" />
         </div>
       </div>
-      <div class="pro1-slide">
+      <div class="pro2-slide">
         <div class="frame">
           <!--		scene 1-->
           <img src="./imgs/Untitled-2-01.jpg" class="Product" id="p1" alt="">
           <div class="block" id="b1">
-            <h2 class="sen1"><span class="bold">new</span> lookbook</h2>
+            <h3 class="sen1"><span class="bold">new</span> lookbook</h3>
           </div>
 
           <!--		scene 2-->
           <img src="./imgs/Untitled-3-01.jpg" class="Product" id="p2" alt="">
           <div class="block" id="b2">
-            <h2 class="sen1 bold">THE BEST PANTS</h2>
+            <h3 class="sen1">THE BEST PANTS</h3>
           </div>
 
           <!--		scence 3-->
           <img src="./imgs/Untitled-4-01.jpg" class="Product" id="p3" alt="">
           <div class="block" id="b3">
-            <h2 class="sen1 bold"><span class="bold">1st</span> April</h2>
+            <h3 class="sen1"><span class="bold">1st</span> April</h3>
           </div>
 
           <!-- scence 4  -->
           <div class="Product" id="p4" alt=""></div>
           <div id="b4">
-            <h2 class="sen2 bold"> Azendo</h2>
-            <h2 class="sen3"> Song of the muse</h2>
+            <h3 class="sen2 bold"> Azendo</h3>
+            <h3 class="sen3"> Song of the muse</h3>
             <a href="#" id="action">Shop now</a>
           </div>
 
@@ -337,15 +340,14 @@
     $(document).ready(function () {
       // intro video 
       var i = 0;
-      if ($(".intro-video")) {
+      if ($(".intro")) {
         var video = setInterval(function () {
           if (i < 2500) {
             i++;
             // console.log(i);
-
           } else {
             clearInterval(video);
-            TweenMax.to(".intro-video", 1, { display: "none" });
+            TweenMax.to(".intro", 1, { display: "none" });
           }
         })
       }
@@ -408,10 +410,10 @@
       var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer.';
 
       var myArray = myString.split("");
-      var pause = false;
+      // var pause = false;
 
       function frameLoop() {
-        if (pause) return true;
+        // if (pause) return true;
         if (myArray.length > 0) {
           $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
           // $('#mytypingText').innerHTML += myArray.shift()
@@ -425,14 +427,17 @@
       //chức năng giống slide anim
       document.addEventListener('scroll', function () {
         if ($('#bodyer').scrollTop() > 270) {
-          pause = false;
+          // pause = false;
           frameLoop();
 
         } else {
-          pause = true;
+          // pause = true;
         }
-        if ($('#bodyer').scrollTop() > 270){
-          
+        var aboutTop = $('#pro2').offset().top;
+        if ($('#bodyer').scrollTop() > aboutTop) {
+          banner().fadeIn;
+        } else {
+
         }
       }, true)
 
@@ -460,10 +465,10 @@
         tl.to("#p4", 1, { opacity: 1 });
         tl.to("#b4", .1, { opacity: 1, left: "50%" });
         tl.to("#action", .1, { opacity: 1 });
-        tl.to("#action", 1, { scale: 1.1, repeat: 2, yoyo: true });
+        tl.to("#REP", .1, { opacity: 1, delay: 2 });
+        tl.to("#p4, #b4, #action", .1, { opacity: 0, delay: 2 });
 
         //replay
-        tl.to("#REP", .1, { opacity: 1 });
 
         $("#REP").click(function () {
           tl.restart();
@@ -539,7 +544,7 @@
     bubble();
     //-------------------end effect snow---------------
 
-    s
+
 
   </script>
 
