@@ -8,21 +8,34 @@
   <link href="./css/bootstrap.css" rel="stylesheet">
   <!-- font awesome  -->
   <link rel="stylesheet" type="text/css" href="fontawesome5.0.2\web-fonts-with-css\css\fontawesome-all.min.css">
+  <!-- banner style  -->
+  <link rel="stylesheet" href="./css/banner-style.css">
+
   <!-- my style  -->
   <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
+  <!-- video intro  -->
+  <!-- <video autoplay muted class="intro-video">
+    <source src="./video/intro video.mp4" type="video/mp4">
+  </video> -->
+
   <!-- mouse effect  -->
   <div class="cursor"></div>
+
 
   <!-- navbar  -->
   <nav role="navigation" class="navbar navbar-inverse" id="mainnav">
     <ul class="nav navbar-nav gav">
-      <li><a href="#home">Thao Ngan</a></li>
+      <li><a href="#home">myname</a></li>
       <li><a href="#about">About me</a></li>
       <li><a href="#service">Skill</a></li>
-      <li><a href="#product">Product</a></li>
+      <li><a href="#product">Products</a></li>
+      <li><a href="#pro1"> &nbsp; &nbsp;1st product</a></li>
+      <li><a href="#pro2"> &nbsp; &nbsp;2nd product</a></li>
+      <li><a href="#pro3"> &nbsp; &nbsp;3th product</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -34,11 +47,11 @@
 
 
   <!-- home  -->
-  <div class="container">
+  <div class="container" id="bodyer">
     <section id="home">
       <!-- The video -->
       <video autoplay muted loop class="myVideo">
-        <source src="./video/demo.mp4" type="video/mp4">
+        <source src="./video/background demo.mp4" type="video/mp4">
       </video>
       <div class="content">
         <div class="moon left move hidden-xs" data-speed="1">
@@ -52,7 +65,7 @@
         </div>
       </div>
       <div class="text">
-        <h2>Thao Ngan</h2>
+        <h2>myname</h2>
         <p>creative designer</p>
       </div>
     </section>
@@ -60,17 +73,17 @@
     <!-- about section  -->
     <section id="about">
       <div class="content">
-        <div class="moon left move" data-speed="1">
+        <div class="moon moona left lefta move" data-speed="1">
           <div class="moonchild"></div>
           <div class="moonchild"></div>
           <div class="moonchild"></div>
           <div class="moonchild"></div>
         </div>
-        <div class="moon center move" data-speed="-1">
+        <div class="moon moona centera move" data-speed="-1">
           <div class="moonchild"></div>
           <div class="moonchild"></div>
         </div>
-        <div class="moon right move" data-speed="1">
+        <div class="moon moona righta move" data-speed="1">
           <div class="moonchild"></div>
         </div>
         <div class="text move" data-speed="-2">
@@ -109,7 +122,7 @@
             <p>Xd</p>
           </div>
           <div class="percent">
-            <span  style="width: 85%;"></span>
+            <span style="width: 85%;"></span>
           </div>
         </div>
       </div>
@@ -143,59 +156,176 @@
     <section id="product">
       <!-- khi hover vào thì video con bướm sẽ chạy -->
       <div class="btf">
+        <img class="btf-back" src="./imgs/nmv.jpg" />
         <div class="text">
           <h2>Logo</h2>
           <p>Tiniworld</p>
         </div>
       </div>
       <div class="btf">
-        <img class="btf-img" src="./imgs/butterfly.png"/>
-        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+        <img class="btf-img" src="./imgs/butterfly.png" />
+        <img class="btf-gif" src="./imgs/butterfly.gif" />
       </div>
       <div class="btf">
+        <img class="btf-back" src="./imgs/bai doodle mien trung.jpg" />
         <div class="text">
-          <h2>Logo</h2>
-          <p>NMV</p>
+          <h2>Design</h2>
+          <p>T-shirt</p>
         </div>
       </div>
       <div class="btf">
-        <img class="btf-img" src="./imgs/butterfly.png"/>
-        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+        <img class="btf-img" src="./imgs/butterfly.png" />
+        <img class="btf-gif" src="./imgs/butterfly.gif" />
       </div>
       <div class="btf">
+        <img class="btf-back" src="./imgs/screen.png" />
         <div class="text">
-          <h2>web</h2>
-          <p>SMLP shop</p>
+          <a href="#pro1">
+            <h2>web</h2>
+            <p>azendo shop</p>
+          </a>
         </div>
       </div>
       <div class="btf">
-        <img class="btf-img" src="./imgs/butterfly.png"/>
-        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+        <img class="btf-img" src="./imgs/butterfly.png" />
+        <img class="btf-gif" src="./imgs/butterfly.gif" />
       </div>
       <div class="btf">
+        <img class="btf-back" src="./imgs/banner-01.jpg" />
         <div class="text">
-          <h2>banner</h2>
-          <p>SMLP shop</p>
+          <a href="#pro2">
+            <h2>banner</h2>
+            <p>azendo shop</p>
+          </a>
         </div>
       </div>
       <div class="btf">
-        <img class="btf-img" src="./imgs/butterfly.png"/>
-        <img class="btf-gif" src="./imgs/butterfly.gif"/>
+        <img class="btf-img" src="./imgs/butterfly.png" />
+        <img class="btf-gif" src="./imgs/butterfly.gif" />
       </div>
       <div class="btf">
+        <img class="btf-back" src="./imgs/chuan case 2.jpg" />
         <div class="text">
-          <h2>card</h2>
-          <p>Flower shop</p>
+          <h2>logo</h2>
+          <p>Case phone shop</p>
         </div>
       </div>
     </section>
 
+    <!-- pro1 -->
+    <section id="pro1">
+      <!-- background of pro1 -->
+      <div class="pro1-back">
+        <div class="pro1-back-moon left">
+          <div class="pro1-moonchild move"></div>
+        </div>
+        <div class="pro1-back-moon right">
+          <div class="pro1-moonchild move"></div>
+          <div class="pro1-moonchild move"></div>
+        </div>
+      </div>
 
+      <!-- content of pro1 -->
+      <div class="pro1-text">
+        <div class="pro1-text-head">
+          <h2>azendo shop</h2>
+          <a href="#">www.azendo-shop.com</a>
+        </div>
+        <div class="pro1-text-center">
+          <p>1/4/2019-1/5/2019</p>
+          <p>Build a ecommerce website</p>
+        </div>
+        <div class="pro-text-icon">
+          <img src="./imgs/Bootstrap-Logo.png" alt="" />
+          <img src="./imgs/css3.svg" alt="" />
+          <img src="./imgs/HTML5_Logo.svg" alt="" />
+        </div>
+      </div>
+      <div class="pro1-slide">
+        <img src="./imgs/screen.png" />
+      </div>
+
+    </section>
+
+    <!-- pro2 -->
+    <section id="pro2">
+      <!-- background of pro2 -->
+      <div class="pro1-back">
+        <div class="pro1-back-moon left">
+          <div class="pro1-moonchild move"></div>
+        </div>
+        <div class="pro1-back-moon right">
+          <div class="pro1-moonchild move"></div>
+          <div class="pro1-moonchild move"></div>
+        </div>
+      </div>
+
+      <!-- content of pro2 -->
+      <div class="pro1-text">
+        <div class="pro1-text-head">
+          <h2>Banner</h2>
+          <a href="#">www.azendo-shop.com</a>
+        </div>
+        <div class="pro1-text-center">
+          <p>1/4/2019-1/5/2019</p>
+          <p>Build a advertise banner</p>
+        </div>
+        <div class="pro-text-icon">
+          <img src="./imgs/Bootstrap-Logo.png" alt="" />
+          <img src="./imgs/css3.svg" alt="" />
+          <img src="./imgs/HTML5_Logo.svg" alt="" />
+        </div>
+      </div>
+      <div class="pro1-slide">
+        <div class="frame">
+          <!--		scene 1-->
+          <img src="./imgs/Untitled-2-01.jpg" class="Product" id="p1" alt="">
+          <div class="block" id="b1">
+            <h2 class="sen1"><span class="bold">new</span> lookbook</h2>
+          </div>
+
+          <!--		scene 2-->
+          <img src="./imgs/Untitled-3-01.jpg" class="Product" id="p2" alt="">
+          <div class="block" id="b2">
+            <h2 class="sen1 bold">THE BEST PANTS</h2>
+          </div>
+
+          <!--		scence 3-->
+          <img src="./imgs/Untitled-4-01.jpg" class="Product" id="p3" alt="">
+          <div class="block" id="b3">
+            <h2 class="sen1 bold"><span class="bold">1st</span> April</h2>
+          </div>
+
+          <!-- scence 4  -->
+          <div class="Product" id="p4" alt=""></div>
+          <div id="b4">
+            <h2 class="sen2 bold"> Azendo</h2>
+            <h2 class="sen3"> Song of the muse</h2>
+            <a href="#" id="action">Shop now</a>
+          </div>
+
+          <button id="REP"><img src="./imgs/img_403313.png" alt="replay"></button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- pro3 -->
+    <section id="pro3">
+      <h1>Contact</h1>
+      <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+    </section>
+
+    <!-- contact  -->
     <section id="contact">
       <h1>Contact</h1>
       <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
     </section>
   </div>
+
+
+
+
   <!-- jquery -->
   <script src='./js/jquery-1.11.3.min.js'></script>
   <script src="./js/jquery-ui-1.12.1.min.js"></script>
@@ -204,8 +334,23 @@
   <script>
 
 
-    //-------------------effect navigator hide and show-------------------------
     $(document).ready(function () {
+      // intro video 
+      var i = 0;
+      if ($(".intro-video")) {
+        var video = setInterval(function () {
+          if (i < 2500) {
+            i++;
+            // console.log(i);
+
+          } else {
+            clearInterval(video);
+            TweenMax.to(".intro-video", 1, { display: "none" });
+          }
+        })
+      }
+
+      //-------------------effect navigator hide and show -------------------------
       var F = 1;
       $(".hamb").click(function () {
         if (F === 1) {
@@ -231,12 +376,12 @@
         var timeline = new TimelineMax();
         var mX = e.pageX;
         var mY = e.pageY;
-        var x = (window.innerWidth - mX) / 100;
+        var x = (window.innerWidth - mX) / 200;
         var y = (window.innerHeight - mY) / 100;
         //mouse cursor
         timeline.set(".cursor", { left: mX, top: mY, delay: 0.08 });
         //background effect
-        timeline.set(".moon", { xPercent: x, yPercent: y });
+        timeline.set(".move", { xPercent: x, yPercent: y });
         timeline.set(".avatar", { xPercent: -x, yPercent: -y })
 
       })
@@ -259,20 +404,72 @@
       })
 */
 
-      //chức năng giống slide anim
-/*
-      $(window).scroll(function(){
-        var aboutTop = $('#about').offset().top - window.innerHeight;
-        console.log(window.innerHeight);
+      //--------------------- typing text---------------------
+      var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer.';
 
-        if ($(window).scrollTop() > 100) {
-          //ko chạy hàm frameLoop
-          frameLoop();
+      var myArray = myString.split("");
+      var pause = false;
+
+      function frameLoop() {
+        if (pause) return true;
+        if (myArray.length > 0) {
+          $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
+          // $('#mytypingText').innerHTML += myArray.shift()
         } else {
-
+          clearInterval(loopTimer);
         }
-      })
-*/
+        var loopTimer = setInterval(frameLoop, 500);
+      }
+
+      //-----------------------end typing text----------------------//
+      //chức năng giống slide anim
+      document.addEventListener('scroll', function () {
+        if ($('#bodyer').scrollTop() > 270) {
+          pause = false;
+          frameLoop();
+
+        } else {
+          pause = true;
+        }
+        if ($('#bodyer').scrollTop() > 270){
+          
+        }
+      }, true)
+
+      //banner
+      var tl = new TimelineLite();
+      function banner() {
+        //		scene 1
+        tl.to("#p1", 1, { opacity: 1 });
+        tl.to("#b1", .1, { opacity: 1, top: "50%" });
+        tl.to("#p1", .1, { opacity: 0, delay: 2 });
+        tl.to("#b1", .1, { opacity: 0, top: "100%" });
+
+        //		scence 2
+        tl.to("#p2", 1, { opacity: 1 });
+        tl.to("#b2", .1, { opacity: 1, rotation: 360 });
+        tl.to("#p2", .1, { opacity: 0, delay: 2 });
+        tl.to("#b2", .1, { opacity: 0 });
+
+        //		scence 3
+        tl.to("#p3", 1, { opacity: 1 });
+        tl.to("#b3", .1, { opacity: 1, top: "50%" });
+        tl.to("#p3, #b3", .1, { opacity: 0, delay: 2, top: "0%" });
+
+        // scence 4 
+        tl.to("#p4", 1, { opacity: 1 });
+        tl.to("#b4", .1, { opacity: 1, left: "50%" });
+        tl.to("#action", .1, { opacity: 1 });
+        tl.to("#action", 1, { scale: 1.1, repeat: 2, yoyo: true });
+
+        //replay
+        tl.to("#REP", .1, { opacity: 1 });
+
+        $("#REP").click(function () {
+          tl.restart();
+        })
+      }
+
     })
 
     //------------------end effect----------------------
@@ -342,37 +539,7 @@
     bubble();
     //-------------------end effect snow---------------
 
-
-    //--------------------- typing text---------------------
-    var inputBox = document.querySelector("#mytypingText");
-
-    var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer';
-
-    var myArray = myString.split("");
-
-    var loopTimer;
-
-    var frameLoop = function () {
-      if (myArray.length > 0) {
-        inputBox.innerHTML += myArray.shift();
-      } else {
-        clearTimeout(loopTimer);
-      }
-      var loopTimer = setTimeout("frameLoop()", 50);
-    }
-    // frameLoop();
-    //-----------------------end typing text----------------------
-
-
-
-    var maxDistance = 200;
-
-    window.addEventListener("scroll", function () {
-      var yPos = window.scrollY;
-      tl.progress(yPos / maxDistance);
-    });
-
-
+    s
 
   </script>
 
