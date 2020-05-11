@@ -18,11 +18,11 @@
 
 <body>
   <!-- video intro  -->
- <!-- <div class="intro">
-   <video autoplay muted class="intro-video">
-     <source src="./video/intro video.mp4" type="video/mp4">
-   </video>
- </div>  -->
+  <!-- <div class="intro">
+    <video autoplay muted class="intro-video">
+      <source src="./video/intro video.mp4" type="video/mp4">
+    </video>
+  </div> -->
 
   <!-- mouse effect  -->
   <div class="cursor"></div>
@@ -33,7 +33,7 @@
     <ul class="nav navbar-nav gav">
       <li><a href="#home">thao ngan</a></li>
       <li><a href="#about">About me</a></li>
-      <li><a href="#service">Skill</a></li>
+      <li><a href="#service">Skills</a></li>
       <li><a href="#product">Products</a></li>
       <li><a href="#pro1"> &nbsp; &nbsp;1st product</a></li>
       <li><a href="#pro2"> &nbsp; &nbsp;2nd product</a></li>
@@ -70,6 +70,19 @@
         <h2>thao ngan</h2>
         <p>creative designer</p>
       </div>
+      <div class="scroll-button">
+        <a href="#about">
+
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <div id="mouse">
+            <span class="unu"></span>
+            <span class="doi"></span>
+            <span class="trei"></span>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- about section  -->
@@ -103,19 +116,16 @@
           <div class="logo-tools" id="ps">
             <p>Ps</p>
           </div>
-          <div class="progress-bar">
-            <!-- <div class="label" data-count="60">0</div> -->
-            <div class="line" style="width:500px">
-              <span></span>
-            </div>
+          <div class="percent">
+            <span class="run-percent" style="width: 65%;"></span>
           </div>
         </div>
         <div class="mycol" id="ai">
-          <div class="logo-tools">
+          <div class="logo-tools" onclick="progress()">
             <p>Ai</p>
           </div>
           <div class="percent">
-            <span style="width: 95%;"></span>
+            <span class="run-percent"></span>
           </div>
 
         </div>
@@ -124,7 +134,7 @@
             <p>Xd</p>
           </div>
           <div class="percent">
-            <span style="width: 85%;"></span>
+            <span class="run-percent" style="width: 85%;"></span>
           </div>
         </div>
       </div>
@@ -171,8 +181,10 @@
       <div class="btf">
         <img class="btf-back" src="./imgs/bai doodle mien trung.jpg" />
         <div class="text">
-          <h2>Design</h2>
-          <p>T-shirt</p>
+          <a href="#pro3">
+            <h2>Design</h2>
+            <p>T-shirt</p>
+          </a>
         </div>
       </div>
       <div class="btf">
@@ -315,15 +327,62 @@
 
     <!-- pro3 -->
     <section id="pro3">
-      <h1>Contact</h1>
-      <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+      <div class="text">
+        <h2>T-shirt design</h2>
+        <p>12/12/2019 - 1/1/2020</p>
+        <p>Digital painting about Mien Trung - Corporation Identify Program</p>
+      </div>
+      <img class="back-img move" src="./imgs/bai doodle mien trung.jpg" alt="" />
     </section>
+
 
     <!-- contact  -->
     <section id="contact">
-      <h1>Contact</h1>
-      <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+      <div class="pro1-back">
+        <div class="pro1-back-moon left">
+          <div class="pro1-moonchild move"></div>
+        </div>
+        <div class="pro1-back-moon right">
+          <div class="pro1-moonchild move"></div>
+          <div class="pro1-moonchild move"></div>
+        </div>
+      </div>
+      <div class="contact-back-icon">
+        <a href="#">
+          <img src="./imgs/facebook-logo.png" alt="" />
+        </a>
+        <a href="#">
+
+          <img src="./imgs/telephone-symbol-button.png" alt="" />
+        </a>
+        <a href="#">
+          <img src="./imgs/github-logo.png" alt="" />
+        </a>
+        <a href="#">
+          <i class="fas fa-envelope-square"></i>
+        </a>
+      </div>
+      <!-- content of pro1 -->
+      <div class="pro1-text">
+        <div class="form-head">
+          <h2>contact me</h2>
+        </div>
+        <div class="form-center">
+          <form action="">
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="email">
+            <br />
+            <textarea name="content" id="content" placeholder="text to me..."></textarea>
+            <br />
+            <button type="submit">send</button>
+          </form>
+        </div>
+      </div>
+      <div class="pro2-slide">
+        <img src="./imgs/5bc0984dc44b334e69b84da795670ed1.gif" alt="" />
+      </div>
     </section>
+
   </div>
 
 
@@ -347,29 +406,36 @@
             // console.log(i);
           } else {
             clearInterval(video);
+            $(".intro").animate({ opacity: 0 });
             TweenMax.to(".intro", 1, { display: "none" });
           }
         })
       }
 
-      //-------------------effect navigator hide and show -------------------------
+      //--------effect navigator hide and show --------------
       var F = 1;
       $(".hamb").click(function () {
         if (F === 1) {
           F = 0;
           //hiện navigator
           $(".navbar").animate({ left: 0 });
+          TweenMax.to(".navbar", 1, { display: "block" });
+
           $("#bubble").fadeIn();
         }
         else {
           F = 1;
           //ẩn navigator
           $(".navbar").animate({ left: -250 });
+          TweenMax.to(".navbar", 1, { display: "none" });
+
           $("#bubble").fadeOut();
         }
       })
       $(".nav li a").click(function () {
         $(".navbar").animate({ left: -250 });
+        TweenMax.to(".navbar", 1, { display: "none" });
+
         $("#bubble").fadeOut();
       })
 
@@ -378,7 +444,7 @@
         var timeline = new TimelineMax();
         var mX = e.pageX;
         var mY = e.pageY;
-        var x = (window.innerWidth - mX) / 200;
+        var x = (window.innerWidth - 2 * mX) / 100;
         var y = (window.innerHeight - mY) / 100;
         //mouse cursor
         timeline.set(".cursor", { left: mX, top: mY, delay: 0.08 });
@@ -388,23 +454,6 @@
 
       })
 
-      //thanh progress
-      /*
-      var i = 0;
-      jQuery("#ps").hover(function () {
-        var t = setInterval(function () {
-          if (i < 100) {
-            i++;
-            $(".label").html(i);
-            $(".percent > span").width(0).animate({width: i + "%"});
-          } else {
-            clearInterval(t);
-          }
-        }, 0)
-      }, function () {
-// hover nhận 2 callback function, function đầu tiên khi hover vào và thứ hai hover ra 
-      })
-*/
 
       //--------------------- typing text---------------------
       var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer.';
@@ -412,36 +461,34 @@
       var myArray = myString.split("");
       // var pause = false;
 
-      function frameLoop() {
-        // if (pause) return true;
-        if (myArray.length > 0) {
-          $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
-          // $('#mytypingText').innerHTML += myArray.shift()
-        } else {
-          clearInterval(loopTimer);
-        }
-        // var loopTimer = setInterval(frameLoop, 500);
-      }
 
-      //-----------------------end typing text----------------------//
-      //chức năng giống slide anim
+      //-----------------end typing text------------------//
+
+
+      //----------------scroll---------------
       document.addEventListener('scroll', function () {
         if ($('#bodyer').scrollTop() > 270) {
-          // pause = false;
-        var loopTimer = setInterval(frameLoop, 500);
+          var loopTimer = setInterval(frameLoop, 500);
 
-        } else {
-          // pause = true;
+          function frameLoop() {
+            if (myArray.length > 0) {
+              $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
+            } else {
+              clearInterval(loopTimer);
+            }
+          }
         }
-        var aboutTop = $('#pro2').offset().top;
-        if ($('#bodyer').scrollTop() > aboutTop) {
-          banner().fadeIn;
-        } else {
 
+        var aboutTop = $('#pro2').offset().top - $('#bodyer').height();
+        // console.log("aboutTop = ", aboutTop);
+        if (aboutTop < 0) {
+          banner();
         }
       }, true)
 
-      //banner
+      //---------------- end scroll ----------------
+
+      //---------------- banner ----------------
       var tl = new TimelineLite();
       function banner() {
         //		scene 1
@@ -476,8 +523,27 @@
       }
 
     })
-
     //------------------end effect----------------------
+
+
+    //-------------- progress bar -------------
+    function progress() {
+      var elem = $(".run-percent");
+      var widthProgress = 0;
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (widthProgress == 100) {
+          console.log(widthProgress);
+          
+          clearInterval(id);
+        } else {
+          widthProgress++;
+          elem.style.width = widthProgress + "%";
+        }
+      }
+    }
+    //------------------end progress bar----------------------
+
 
 
     //-----------------effect snow----------------------
