@@ -94,6 +94,7 @@ body {
   background: transparent;
   border-radius: 0;
   border: none;
+  display: none;
 }
 .navbar ul {
   display: flex;
@@ -538,7 +539,6 @@ section#service::before {
   content: "";
   background-color: #14afaf;
   height: 10px;
-  width: 0%;
 }
 .animate {
   animation: animationLoaded 2s linear infinite;

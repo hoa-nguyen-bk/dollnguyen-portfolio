@@ -31,7 +31,7 @@
   <!-- navbar  -->
   <nav role="navigation" class="navbar navbar-inverse" id="mainnav">
     <ul class="nav navbar-nav gav">
-      <li><a href="#home">thao ngan</a></li>
+      <li><a href="#home">my name</a></li>
       <li><a href="#about">About me</a></li>
       <li><a href="#service">Skills</a></li>
       <li><a href="#product">Products</a></li>
@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="text">
-        <h2>thao ngan</h2>
+        <h2>my name</h2>
         <p>creative designer</p>
       </div>
       <div class="scroll-button">
@@ -114,29 +114,29 @@
     <section id="service">
       <h2>tools</h2>
       <div class="myrow">
-        <div class="mycol">
-          <div class="logo-tools" id="ps">
+        <div class="mycol" id="ps">
+          <div class="logo-tools" onclick="progressBar(this, 65)">
             <p>Ps</p>
           </div>
           <div class="percent">
-            <span class="run-percent" style="width: 65%;"></span>
+            <span class="run-percent"></span>
           </div>
         </div>
         <div class="mycol" id="ai">
-          <div class="logo-tools" onclick="progress()">
+          <div class="logo-tools" onclick="progressBar(this, 80)">
             <p>Ai</p>
           </div>
           <div class="percent">
-            <span class="run-percent" style="width: 95%;"></span>
+            <span class="run-percent"></span>
           </div>
 
         </div>
         <div class="mycol" id="xs">
-          <div class="logo-tools">
+          <div class="logo-tools" onclick="progressBar(this, 70)">
             <p>Xd</p>
           </div>
           <div class="percent">
-            <span class="run-percent" style="width: 85%;"></span>
+            <span class="run-percent"></span>
           </div>
         </div>
       </div>
@@ -466,7 +466,26 @@
   <script src="./js/jquery-ui-1.12.1.min.js"></script>
   <!-- tween max  -->
   <script src="GS/TweenMax.min.js"></script>
+
   <script>
+    //-------------- progress bar -------------
+    function progressBar(el, grade) {
+
+      var elem = $(el).closest('.mycol').find(".run-percent");
+      var widthProgress = 0;
+
+      var id = setInterval(() => {
+        if (widthProgress++ - 1 === grade) {
+          clearInterval(id);
+          return;
+        }
+        elem.css({
+          'width': widthProgress + "%"
+        })
+      }, 10);
+
+    }
+    //------------------end progress bar----------------------
 
 
     $(document).ready(function () {
@@ -538,7 +557,7 @@
       //----------------scroll---------------
       document.addEventListener('scroll', function () {
         if ($('#bodyer').scrollTop() > 270) {
-          var loopTimer = setInterval(function(){frameLoop()}, 400);
+          var loopTimer = setInterval(function () { frameLoop() }, 400);
 
           function frameLoop() {
             if (myArray.length > 0) {
@@ -548,6 +567,7 @@
             }
           }
         }
+
 
         var proTop = $('#pro2').offset().top - $('#bodyer').height();
         // console.log("aboutTop = ", aboutTop);
@@ -615,7 +635,7 @@
         // set to .2 , every thing => x = -50
         tll.to(".c5", .2, { x: -50, y: -250, rotationX: -90, rotationY: 180 });
         tll.to(".c3", .2, { x: -50, y: 250, rotationX: 90, rotationY: 180 });
-        tll.to(".c11", .2, {x: -50})
+        tll.to(".c11", .2, { x: -50 })
 
         tll.to(".c6", .2, { x: -50, z: 250 });
         tll.to(".c9", .2, { z: 175, x: -225 });
@@ -643,7 +663,7 @@
         }
 
         var tm = setInterval(function () { QUAY() }, 100);
-        
+
         $("#sitemapball div").hover(function () {
           clearInterval(tm);
         }, function () {
@@ -651,27 +671,13 @@
         })
       }
 
+
+
+
     })
     //------------------end effect----------------------
 
 
-    //-------------- progress bar -------------
-    function progress() {
-      var elem = $(".run-percent");
-      var widthProgress = 0;
-      var id = setInterval(frame, 10);
-      function frame() {
-        if (widthProgress == 100) {
-          console.log(widthProgress);
-
-          clearInterval(id);
-        } else {
-          widthProgress++;
-          elem.style.width = widthProgress + "%";
-        }
-      }
-    }
-    //------------------end progress bar----------------------
 
 
 
