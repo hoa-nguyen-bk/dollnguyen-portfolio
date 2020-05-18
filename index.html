@@ -18,11 +18,11 @@
 
 <body>
   <!-- video intro  -->
-  <div class="intro">
+  <!-- <div class="intro">
     <video autoplay muted class="intro-video">
       <source src="./video/intro video.mp4" type="video/mp4">
     </video>
-  </div>
+  </div> -->
 
   <!-- mouse effect  -->
   <div class="cursor"></div>
@@ -39,6 +39,8 @@
       <li><a href="#pro2"> &nbsp; &nbsp;2nd product</a></li>
       <li><a href="#pro3"> &nbsp; &nbsp;3th product</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#sitemap">Sitemap</a></li>
+
     </ul>
   </nav>
   <!-- navbar hambuger -->
@@ -125,7 +127,7 @@
             <p>Ai</p>
           </div>
           <div class="percent">
-            <span class="run-percent"  style="width: 95%;"></span>
+            <span class="run-percent" style="width: 95%;"></span>
           </div>
 
         </div>
@@ -383,6 +385,77 @@
       </div>
     </section>
 
+
+    <section id="sitemap">
+      <div id="sitemapball">
+        <div class="c3">
+          <div class="btf">
+            <img class="btf-gif" src="./imgs/butterfly.gif" />
+          </div>
+        </div>
+        <div class="c5">
+          <div class="btf">
+            <img class="btf-gif" src="./imgs/butterfly.gif" />
+
+          </div>
+        </div>
+        <!-- <li><a href="#home">thao ngan</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#service">Skills</a></li>
+        <li><a href="#product">Products</a></li>
+        <li><a href="#pro1"> &nbsp; &nbsp;1st product</a></li>
+        <li><a href="#pro2"> &nbsp; &nbsp;2nd product</a></li>
+        <li><a href="#pro3"> &nbsp; &nbsp;3th product</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#sitemap">Sitemap</a></li> -->
+
+        <div class="c6">
+          <h2>
+            <a href="#home">Home</a>
+          </h2>
+        </div>
+        <div class="c9">
+          <h2>
+            <a href="#about">About me</a>
+          </h2>
+        </div>
+        <div class="c4">
+          <h2>
+            <a href="#service">Skills</a>
+          </h2>
+        </div>
+        <div class="c10">
+          <h2>
+            <a href="#product">Products</a>
+          </h2>
+        </div>
+        <div class="c1">
+          <h2>
+            <a href="#pro1"> &nbsp; &nbsp;1st product</a>
+          </h2>
+        </div>
+        <div class="c7">
+          <h2>
+            <a href="#pro2"> &nbsp; &nbsp;2nd product</a>
+          </h2>
+        </div>
+        <div class="c2">
+          <h2>
+            <a href="#pro3"> &nbsp; &nbsp;3th product</a>
+          </h2>
+        </div>
+        <div class="c8">
+          <h2>
+            <a href="#contact">Contact</a>
+          </h2>
+        </div>
+        <div class="c11">
+          <div class="avatar"></div>
+        </div>
+
+      </div>
+    </section>
+
   </div>
 
 
@@ -459,16 +532,13 @@
       var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer.';
 
       var myArray = myString.split("");
-      // var pause = false;
-
-
       //-----------------end typing text------------------//
 
 
       //----------------scroll---------------
       document.addEventListener('scroll', function () {
         if ($('#bodyer').scrollTop() > 270) {
-          var loopTimer = setInterval(frameLoop, 500);
+          var loopTimer = setInterval(function(){frameLoop()}, 400);
 
           function frameLoop() {
             if (myArray.length > 0) {
@@ -479,11 +549,22 @@
           }
         }
 
-        var aboutTop = $('#pro2').offset().top - $('#bodyer').height();
+        var proTop = $('#pro2').offset().top - $('#bodyer').height();
         // console.log("aboutTop = ", aboutTop);
-        if (aboutTop < 0) {
+        // khi scroll tới độ cao của pro2 thì sẽ chạy
+        if (proTop < 0) {
           banner();
         }
+
+        var sitemapTop = $('#sitemap').offset().top;
+        // console.log(sitemapTop);
+
+        let sitemapTime = true;
+        if (sitemapTop === 0 && sitemapTime === true) {
+          sitemap();
+          sitemapTime = false;
+        }
+
       }, true)
 
       //---------------- end scroll ----------------
@@ -522,6 +603,54 @@
         })
       }
 
+
+      // sitemap effect 
+      function sitemap() {
+        console.log("run sitemap");
+
+        var tll = new TimelineLite();
+
+        tll.to("#sitemapball", 0.5, { opacity: 1 })
+
+        // set to .2 , every thing => x = -50
+        tll.to(".c5", .2, { x: -50, y: -250, rotationX: -90, rotationY: 180 });
+        tll.to(".c3", .2, { x: -50, y: 250, rotationX: 90, rotationY: 180 });
+        tll.to(".c11", .2, {x: -50})
+
+        tll.to(".c6", .2, { x: -50, z: 250 });
+        tll.to(".c9", .2, { z: 175, x: -225 });
+        tll.to(".c4", .2, { x: -300 });
+        tll.to(".c10", .2, { z: -175, x: -225 });
+        tll.to(".c1", .2, { x: -50, z: -250 });
+        tll.to(".c7", .2, { z: -175, x: 125 });
+        tll.to(".c2", .2, { x: 200 });
+        tll.to(".c8", .2, { z: 175, x: 125 });
+
+        // set to .5, every rotationY to +180
+        tll.to(".c9", .5, { rotationY: -45 });
+        tll.to(".c4", .5, { rotationY: 270 });
+        tll.to(".c10", .5, { rotationY: 225 });
+        tll.to(".c1", .5, { rotationY: 180 });
+        tll.to(".c7", .5, { rotationY: 135 });
+        tll.to(".c2", .5, { rotationY: 90 });
+        tll.to(".c8", .5, { rotationY: 45 });
+
+        var num = 0;
+        function QUAY() {
+          // set to 10 and 10000
+          num = num + 2;
+          tll.to("#sitemapball", 0.1, { rotationY: num });
+        }
+
+        var tm = setInterval(function () { QUAY() }, 100);
+        
+        $("#sitemapball div").hover(function () {
+          clearInterval(tm);
+        }, function () {
+          tm = setInterval(function () { QUAY() }, 100);
+        })
+      }
+
     })
     //------------------end effect----------------------
 
@@ -534,7 +663,7 @@
       function frame() {
         if (widthProgress == 100) {
           console.log(widthProgress);
-          
+
           clearInterval(id);
         } else {
           widthProgress++;

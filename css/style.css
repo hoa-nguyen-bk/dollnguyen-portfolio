@@ -191,7 +191,7 @@ section#home {
   justify-content: center;
   align-items: center;
 }
-section#home .avatar {
+.avatar {
   width: 170px;
   height: 170px;
   overflow: hidden;
@@ -262,8 +262,6 @@ h2 {
   letter-spacing: 0.1em;
 }
 
-
-
 /* scroll button  */
 #mouse span {
   display: block;
@@ -275,7 +273,6 @@ h2 {
   border-bottom: 2px solid white;
   margin: 0 0 3px 6px;
 }
-
 
 .unu,
 .doi,
@@ -296,7 +293,7 @@ h2 {
   animation-delay: 0.3s;
 }
 
-.scroll-button{
+.scroll-button {
   position: absolute;
   bottom: 5%;
 }
@@ -346,7 +343,6 @@ h2 {
     opacity: 1;
   }
 }
-
 
 /* about */
 section#about,
@@ -632,6 +628,7 @@ section#product {
 .pro-text-icon img {
   width: 20%;
 }
+
 .pro1-slide {
   position: absolute;
   right: 10%;
@@ -731,10 +728,16 @@ section#contact {
 .contact-back-icon img {
   filter: invert(100%);
   width: 30%;
+  transition: all .2s ;
   /* margin-bottom: 40px; */
+}
+.contact-back-icon img:hover, .contact-back-icon i:hover {
+  transform: scale(1.2);
 }
 .contact-back-icon i {
   font-size: 4rem;
+  transition: all .2s ;
+
 }
 #contact h2 {
   margin-top: 0px;
@@ -752,7 +755,7 @@ section#contact {
   font-weight: bold;
   box-shadow: 3px -3px 0 0 #14afaf4f;
   color: black;
-
+  outline: none;
   background-color: rgba(255, 255, 255, 0.9);
 }
 .form-center textarea {
@@ -763,6 +766,8 @@ section#contact {
   color: black;
   width: 100%;
   border: none;
+  outline: none;
+
   font-weight: bold;
   box-shadow: 3px -3px 0 0 #14afaf4f;
   background-color: rgba(255, 255, 255, 0.9);
@@ -781,6 +786,45 @@ section#contact {
   box-shadow: 3px -3px 0 0 #14afaf, 6px -6px 0 0 #14afaf3b;
 }
 
+/* sitemap */
+#sitemap {
+  display: block;
+  position: relative;
+  padding-top: 40vh;
+  overflow: hidden;
+}
+
+#sitemapball {
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 50%;
+  background-color: black;
+  /* transform: translate(50%, -50%); */
+  opacity: 0;
+}
+
+#sitemapball div {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid white; */
+  /* padding-top: 10px; */
+  /* line-height: 100px; */
+  /* transform: scale(-1, 1, 1); */
+  text-align: center;
+}
+div.c3 .btf-gif, .c5 .btf-gif{
+  width: 100%;
+  opacity: 1;
+  border: 1px solid transparent;
+}
+
+
+
+
+
+/* media  */
 @media screen and (max-width: 481px) {
   .hidden-xs {
     display: none !important;
