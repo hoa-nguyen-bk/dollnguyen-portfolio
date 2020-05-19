@@ -18,11 +18,11 @@
 
 <body>
   <!-- video intro  -->
-  <!-- <div class="intro">
+  <div class="intro">
     <video autoplay muted class="intro-video">
       <source src="./video/intro video.mp4" type="video/mp4">
     </video>
-  </div> -->
+  </div>
 
   <!-- mouse effect  -->
   <div class="cursor"></div>
@@ -31,7 +31,7 @@
   <!-- navbar  -->
   <nav role="navigation" class="navbar navbar-inverse" id="mainnav">
     <ul class="nav navbar-nav gav">
-      <li><a href="#home">my name</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About me</a></li>
       <li><a href="#service">Skills</a></li>
       <li><a href="#product">Products</a></li>
@@ -55,7 +55,7 @@
     <section id="home">
       <!-- The video -->
       <video autoplay muted loop class="myVideo">
-        <source src="./video/background demo.mp4" type="video/mp4">
+        <!-- <source src="./video/background demo.mp4" type="video/mp4"> -->
       </video>
       <div class="content">
         <div class="moon left move hidden-xs" data-speed="1">
@@ -108,6 +108,8 @@
           <div id="mytypingText"></div>
         </div>
       </div>
+      <div class="about-black"></div>
+
     </section>
 
     <!-- service  -->
@@ -115,7 +117,7 @@
       <h2>tools</h2>
       <div class="myrow">
         <div class="mycol" id="ps">
-          <div class="logo-tools" onclick="progressBar(this, 65)">
+          <div class="logo-tools" onmouseover="progressBar(this, 65)">
             <p>Ps</p>
           </div>
           <div class="percent">
@@ -123,7 +125,7 @@
           </div>
         </div>
         <div class="mycol" id="ai">
-          <div class="logo-tools" onclick="progressBar(this, 80)">
+          <div class="logo-tools" onmouseover="progressBar(this, 80)">
             <p>Ai</p>
           </div>
           <div class="percent">
@@ -132,7 +134,7 @@
 
         </div>
         <div class="mycol" id="xs">
-          <div class="logo-tools" onclick="progressBar(this, 70)">
+          <div class="logo-tools" onmouseover="progressBar(this, 70)">
             <p>Xd</p>
           </div>
           <div class="percent">
@@ -164,6 +166,8 @@
           </ul>
         </div>
       </div>
+      <div class="about-black"></div>
+
     </section>
 
     <!-- product  -->
@@ -226,6 +230,8 @@
           <p>Case phone shop</p>
         </div>
       </div>
+
+
     </section>
 
     <!-- pro1 -->
@@ -258,7 +264,7 @@
         </div>
       </div>
       <div class="pro1-slide">
-        <img src="./imgs/screen.png" />
+        <img class="" src="./imgs/screen.png" />
       </div>
 
     </section>
@@ -490,16 +496,38 @@
 
     $(document).ready(function () {
       // intro video 
+      var tlm = new TimelineLite();
       var i = 0;
       if ($(".intro")) {
         var video = setInterval(function () {
-          if (i < 2500) {
+          // set to i < 2000 
+          if (i < 500) {
             i++;
             // console.log(i);
           } else {
             clearInterval(video);
-            $(".intro").animate({ opacity: 0 });
-            TweenMax.to(".intro", 1, { display: "none" });
+            tlm.to(".intro", .8, { opacity: 0, autoAlpha: 0 });
+            $(".myVideo").append(`
+        <source src="./video/background demo.mp4" type="video/mp4">`);
+            //--------------- effect mouse ------------
+            $(".avatar, .lefta .moonchild:nth-child(3) ")
+              .on("mouseenter", function () {
+                tlm.to(".cursor", .15, { opacity: 0, scale: 2, overwrite: 'auto' });
+              })
+              .on("mouseleave", function () {
+                tlm.to(".cursor", .15, { opacity: 1, scale: 1, overwrite: 'auto' });
+              });
+            //------------------end effect----------------------
+            tlm
+              .from("myVideo", .5, { display: "none", opacity: 0, delay: 1.5 })
+              .from(".hamb", .3, { opacity: 0, x: -10 })
+              .from("#home .moon.right", .5, { opacity: 0, x: 100 })
+              .from("#home .moon.left", .5, { opacity: 0, x: -100 })
+              .from("#home .avatar", .5, { opacity: 0 })
+              .from("#home .text", .5, { opacity: 0, y: 50 })
+              .from(".mouse, #mouse", .5, { opacity: 0, y: 100 })
+
+
           }
         })
       }
@@ -510,41 +538,49 @@
         if (F === 1) {
           F = 0;
           //hiện navigator
-          $(".navbar").animate({ left: 0 });
-          TweenMax.to(".navbar", 1, { display: "block" });
+          // $(".navbar").animate({ left: 0 });
+          TweenMax.to(".navbar", 1, { display: "block", x: 250 });
 
           $("#bubble").fadeIn();
         }
         else {
           F = 1;
           //ẩn navigator
-          $(".navbar").animate({ left: -250 });
-          TweenMax.to(".navbar", 1, { display: "none" });
+          // $(".navbar").animate({ left: -250 });
+          TweenMax.to(".navbar", 1, { display: "none", x: -250 });
 
           $("#bubble").fadeOut();
         }
       })
       $(".nav li a").click(function () {
-        $(".navbar").animate({ left: -250 });
-        TweenMax.to(".navbar", 1, { display: "none" });
+        // $(".navbar").animate({ left: -250 });
+        TweenMax.to(".navbar", 1, { display: "none", x: -250 });
 
         $("#bubble").fadeOut();
       })
+      var widthWindow = $("#bodyer").innerWidth();
+      if (widthWindow > 769) {
+        console.log(widthWindow);
+        
+        $(window).mousemove(function (e) {
 
-      $(window).mousemove(function (e) {
+          var timeline = new TimelineMax();
+          var mX = e.pageX;
+          var mY = e.pageY;
+          var x = (window.innerWidth - 2 * mX) / 100;
+          var y = (window.innerHeight - mY) / 100;
+          //mouse cursor
+          timeline.set(".cursor", { left: mX, top: mY, delay: 0.08 });
+          //background effect
+          timeline.set(".move", { xPercent: x, yPercent: y });
+          timeline.set(".avatar", { xPercent: -x, yPercent: -y })
 
-        var timeline = new TimelineMax();
-        var mX = e.pageX;
-        var mY = e.pageY;
-        var x = (window.innerWidth - 2 * mX) / 100;
-        var y = (window.innerHeight - mY) / 100;
-        //mouse cursor
-        timeline.set(".cursor", { left: mX, top: mY, delay: 0.08 });
-        //background effect
-        timeline.set(".move", { xPercent: x, yPercent: y });
-        timeline.set(".avatar", { xPercent: -x, yPercent: -y })
+        })
+      }
+      else {
+        
+      }
 
-      })
 
 
       //--------------------- typing text---------------------
@@ -556,26 +592,108 @@
 
       //----------------scroll---------------
       document.addEventListener('scroll', function () {
-        if ($('#bodyer').scrollTop() > 270) {
-          var loopTimer = setInterval(function () { frameLoop() }, 400);
 
-          function frameLoop() {
-            if (myArray.length > 0) {
-              $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
-            } else {
-              clearInterval(loopTimer);
+        //-------- type text effect in aboutTop 
+        var aboutTop = $('#about').offset().top;
+
+        if (aboutTop === 0) {
+          // console.log(aboutTop);
+          tlm.to("#about .about-black", .3, { opacity: 0, display: "none" });
+          aboutAnimation(typeText);
+          function aboutAnimation(fun) {
+            tlm.from(".moona", .5, { opacity: 0 });
+            tlm.from("#about h2", .5, { opacity: 0 });
+            setTimeout(function () { fun() }, 2000);
+
+          }
+          function typeText() {
+            // setTimeout(setInterval(frameLoop(), 50), 100);
+
+            var loopTimer = setInterval(function () { frameLoop() }, 50);
+            function frameLoop() {
+              // console.log("run");
+              if (myArray.length > 0) {
+                $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
+              } else {
+                clearInterval(loopTimer);
+              }
             }
           }
+        } else {
+          tlm.set("#about .about-black", { opacity: 1, display: "block" });
+
         }
 
+        //------------skillTop
+        var skillTop = $('#service').offset().top;
+        // console.log(skillTop);
 
-        var proTop = $('#pro2').offset().top - $('#bodyer').height();
-        // console.log("aboutTop = ", aboutTop);
+        if (skillTop === 0) {
+          tlm.to("#service .about-black", .5, { opacity: 0, display: "none" });
+          tlm
+            // .from("#service h2:first-child", .5, {autoAlpha: 0, delay: .5})
+            .staggerFrom("#service .myrow div", .2, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+            .staggerFrom(".mycol ul li", .2, { x: 10, autoAlpha: 0 }, .2)
+        }
+        else {
+          tlm.set("#service .about-black", { opacity: 1, display: "block" });
+
+        }
+
+        //--------------productTop
+        var productTop = $('#product').offset().top;
+        if (productTop === 0) {
+          tlm
+            .staggerFrom("#product .btf:nth-child(odd)", .2, { scale: 0, autoAlpha: 0 }, .2)
+            .staggerFrom("#product .btf:nth-child(even)", .2, { scale: 0, autoAlpha: 0 }, .2)
+        }
+
+        //-------------pro1Top
+        var pro1Top = $('#pro1').offset().top;
+        if (pro1Top === 0) {
+          tlm
+            .staggerFrom("#pro1 .pro1-back div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+            .staggerFrom("#pro1 .pro1-text h2, #pro1 .pro1-text a, #pro1 .pro1-text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
+            .staggerFrom("#pro1 .pro-text-icon img", .5, { opacity: 0, autoAlpha: 0, scale: 1 }, .2)
+            .from("#pro1 .pro1-slide", .5, { opacity: 0, autoAlpha: 0 })
+            .to("#pro1 .pro1-slide img", .5, { className: "+=pro1-slide-shadow" })
+        }
+
+        //-----------pro2Top
+        var pro2Top = $('#pro2').offset().top;
+        // console.log("aboutTop = ", proTop);
         // khi scroll tới độ cao của pro2 thì sẽ chạy
-        if (proTop < 0) {
-          banner();
+        if (pro2Top === 0) {
+          tlm
+            .staggerFrom("#pro2 .pro1-back div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+            .staggerFrom("#pro2 .pro1-text h2, #pro2 .pro1-text a, #pro2 .pro1-text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
+            .staggerFrom("#pro2 .pro-text-icon img", .5, { opacity: 0, autoAlpha: 0, scale: 1 }, .2)
+            .from(".frame", .3, { opacity: 0 })
+          setTimeout(function () { banner() }, 2500);
+
         }
 
+        //-----------pro3Top
+        var pro3Top = $("#pro3").offset().top;
+        if (pro3Top === 0) {
+          tlm
+            .staggerFrom("#pro3 .text h2, #pro3 .text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
+            .from("#pro3 .back-img", .5, { opacity: 0, y: 100 })
+        }
+
+        //-----------contactTop
+        var contactTop = $('#contact').offset().top;
+        // console.log(contactTop);
+        if (contactTop === 0) {
+          var tlt = new TimelineLite();
+          tlt
+            .staggerFrom("#contact  div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+            .staggerFrom(".contact-back-icon img", .5, { scaleX: 1, autoAlpha: 0, delay: 1 }, .5)
+            .staggerFrom(".contact-back-icon i", .5, { scaleX: 1, autoAlpha: 0 })
+        }
+
+
+        //-----------sitemapTop
         var sitemapTop = $('#sitemap').offset().top;
         // console.log(sitemapTop);
 
@@ -626,7 +744,7 @@
 
       // sitemap effect 
       function sitemap() {
-        console.log("run sitemap");
+        // console.log("run sitemap");
 
         var tll = new TimelineLite();
 
@@ -676,9 +794,6 @@
 
     })
     //------------------end effect----------------------
-
-
-
 
 
     //-----------------effect snow----------------------
