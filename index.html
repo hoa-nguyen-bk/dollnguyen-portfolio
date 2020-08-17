@@ -18,11 +18,12 @@
 
 <body>
   <!-- video intro  -->
-  <div class="intro">
+  <!-- <div class="intro">
     <video autoplay muted class="intro-video">
       <source src="./video/intro video.mp4" type="video/mp4">
     </video>
-  </div>
+  </div> -->
+
 
   <!-- mouse effect  -->
   <div class="cursor"></div>
@@ -69,8 +70,8 @@
         </div>
       </div>
       <div class="text">
-        <h2>my name</h2>
-        <p>creative designer</p>
+        <h2>Nguyen Le Xuan Hoa</h2>
+        <p>front-end developer</p>
       </div>
       <div class="scroll-button">
         <a href="#about">
@@ -108,7 +109,7 @@
           <div id="mytypingText"></div>
         </div>
       </div>
-<!--
+      <!--
 			<div class="scroll-button">
         <a href="#service">
 
@@ -161,23 +162,23 @@
       <div class="myrow">
         <div class="mycol">
           <ul>
-            <li>Creativity</li>
-            <li>Communication</li>
-            <li>Typography</li>
+            <li>Html5/Css3/Scss</li>
+            <li>Javascript ES5, ES6</li>
+            <li>Bootstrap 3 & 4</li>
           </ul>
         </div>
         <div class="mycol">
           <ul>
-            <li>Interactive media</li>
-            <li>Coding</li>
-            <li>Branding</li>
+            <li>Wordpress</li>
+            <li>Git/Github</li>
+            <li>Axios</li>
           </ul>
         </div>
         <div class="mycol">
           <ul>
-            <li>Delivering</li>
-            <li>Presentation</li>
-            <li>Typography</li>
+            <li>ReactJS</li>
+            <li>Java</li>
+            <li>UX/UI Design</li>
           </ul>
         </div>
       </div>
@@ -189,10 +190,12 @@
     <section id="product">
       <!-- khi hover vào thì video con bướm sẽ chạy -->
       <div class="btf">
-        <img class="btf-back" src="./imgs/nmv.jpg" />
+        <img class="btf-back" src="./imgs/screencapture-student1060632fpt-github-io-BTVN-web-2020-06-02-09_42_04.png" />
         <div class="text">
-          <h2>Logo</h2>
-          <p>Tiniworld</p>
+          <a href="https://student1060632fpt.github.io/BTVN_web/"  target="_blank">
+            <h2>Landing page</h2>
+            <p>Housing</p>
+          </a>
         </div>
       </div>
       <div class="btf">
@@ -202,9 +205,9 @@
       <div class="btf">
         <img class="btf-back" src="./imgs/bai doodle mien trung.jpg" />
         <div class="text">
-          <a href="#pro3">
-            <h2>Design</h2>
-            <p>T-shirt</p>
+          <a href="https://student1060632fpt.github.io/Index.html" target="_blank">
+            <h2>Best Design</h2>
+            <p>Chèvre shop</p>
           </a>
         </div>
       </div>
@@ -213,11 +216,11 @@
         <img class="btf-gif" src="./imgs/butterfly.gif" />
       </div>
       <div class="btf">
-        <img class="btf-back" src="./imgs/screen.png" />
+        <img class="btf-back" src="./imgs/screencapture-aptech-fpt-edu-vn-hoalenguyen1999-carousel-2020-08-17-17_42_22.png" />
         <div class="text">
           <a href="#pro1">
             <h2>web</h2>
-            <p>azendo shop</p>
+            <p>FPT Aptech</p>
           </a>
         </div>
       </div>
@@ -265,12 +268,12 @@
       <!-- content of pro1 -->
       <div class="pro1-text">
         <div class="pro1-text-head">
-          <h2>azendo shop</h2>
-          <a href="#">www.azendo-shop.com</a>
+          <h2>Fpt Aptech</h2>
+          <a href="http://aptech.fpt.edu.vn/hoalenguyen1999/carousel/">aptech.fpt.edu.vn</a>
         </div>
         <div class="pro1-text-center">
           <p>1/4/2019-1/5/2019</p>
-          <p>Build a ecommerce website</p>
+          <p>Build a landing page</p>
         </div>
         <div class="pro-text-icon">
           <img src="./imgs/Bootstrap-Logo.png" alt="" />
@@ -279,7 +282,7 @@
         </div>
       </div>
       <div class="pro1-slide">
-        <img class="" src="./imgs/screen.png" />
+        <img class="" src="./imgs/screencapture-aptech-fpt-edu-vn-hoalenguyen1999-carousel-2020-08-17-17_42_22.png" />
       </div>
 
     </section>
@@ -485,6 +488,7 @@
   <!-- jquery -->
   <script src="./js/jquery-1.11.3.min.js"></script>
   <script src="./js/jquery-ui-1.12.1.min.js"></script>
+  <script src="./js/bootstrap.js"></script>
   <!-- tween max  -->
   <script src="GS/TweenMax.min.js"></script>
 
@@ -573,11 +577,11 @@
 
         $("#bubble").fadeOut();
       })
-      
+
       var widthWindow = $("#bodyer").width();
-//      var widthWindow1 = $("#bodyer").innerWidth();
-//      var widthWindow3 = window.innerWidth;
-//      alert(widthWindow);
+      //      var widthWindow1 = $("#bodyer").innerWidth();
+      //      var widthWindow3 = window.innerWidth;
+      //      alert(widthWindow);
       if (widthWindow > 983) {
 
         $(window).mousemove(function (e) {
@@ -602,7 +606,7 @@
 
 
       //--------------------- typing text---------------------
-      var myString = 'I’m a Designer. Recently, I’m student of FPT Arena Multimedia, and I’ve worked on some freelance projects for 1 year. My biggest passion is design, so I love to work hard to become a talented designer.';
+      var myString = "I’m a Creative Front-end Developer. I graduated from FPT Arena Multimedia. But now, I study Information Technology in Ho Chi Minh University of Science and Technology. In addition, I’ve worked on numerous freelance projects and on-site in a company for a year. I completed the Front-end Developer Program at Cybersoft Academy. My soft skills: Positive attitude, teamwork and Solving a problem quickly when being under high pressure";
 
       var myArray = myString.split("");
       //-----------------end typing text------------------//
@@ -611,135 +615,135 @@
       //----------------scroll---------------
 
       if (widthWindow > 481) {
-      document.addEventListener('scroll', function () {
+        document.addEventListener('scroll', function () {
 
-        //-------- type text effect in aboutTop 
-        var aboutTop = $('#about').offset().top;
+          //-------- type text effect in aboutTop 
+          var aboutTop = $('#about').offset().top;
 
-        if (aboutTop === 0) {
-          // console.log(aboutTop);
-          tlm.to("#about .about-black", .3, { opacity: 0, display: "none" });
-          aboutAnimation(typeText);
-          function aboutAnimation(fun) {
-            tlm.from(".moona", .5, { opacity: 0 });
-            tlm.from("#about h2", .5, { opacity: 0 })
-						.from("#about .mouse, .mouse-arrow", .5, { opacity: 0, y: 100 })
-            setTimeout(function () { fun() }, 2000);
+          if (aboutTop === 0) {
+            // console.log(aboutTop);
+            tlm.to("#about .about-black", .5, { opacity: 0, display: "none" });
+            aboutAnimation(typeText);
+            function aboutAnimation(fun) {
+              tlm.from(".moona", .5, { opacity: 0 });
+              tlm.from("#about h2", .5, { opacity: 0 })
+                .from("#about .mouse, .mouse-arrow", .5, { opacity: 0, y: 100 })
+              setTimeout(function () { fun() }, 2000);
 
-          }
-          
-        } else {
-          tlm.set("#about .about-black", { opacity: 1, display: "block" });
-
-        }
-
-        //------------skillTop
-        var skillTop = $('#service').offset().top;
-        // console.log(skillTop);
-
-        if (skillTop === 0) {
-          tlm.to("#service .about-black", .5, { opacity: 0, display: "none" });
-          tlm
-            // .from("#service h2:first-child", .5, {autoAlpha: 0, delay: .5})
-            .staggerFrom("#service .myrow div", .2, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
-            .staggerFrom(".mycol ul li", .2, { x: 10, autoAlpha: 0 }, .2)
-        }
-        else {
-          tlm.set("#service .about-black", { opacity: 1, display: "block" });
-
-        }
-
-        //--------------productTop
-        var productTop = $('#product').offset().top;
-        if (productTop === 0) {
-          tlm
-            .staggerFrom("#product .btf:nth-child(odd)", .2, { scale: 0, autoAlpha: 0 }, .2)
-            .staggerFrom("#product .btf:nth-child(even)", .2, { scale: 0, autoAlpha: 0 }, .2)
-        }
-
-        //-------------pro1Top
-        var pro1Top = $('#pro1').offset().top;
-        if (pro1Top === 0) {
-          tlm
-            .staggerFrom("#pro1 .pro1-back div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
-            .staggerFrom("#pro1 .pro1-text h2, #pro1 .pro1-text a, #pro1 .pro1-text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
-            .staggerFrom("#pro1 .pro-text-icon img", .5, { opacity: 0, autoAlpha: 0, scale: 1 }, .2)
-            .from("#pro1 .pro1-slide", .5, { opacity: 0, autoAlpha: 0 })
-            .to("#pro1 .pro1-slide img", .5, { className: "+=pro1-slide-shadow" })
-        }
-
-        //-----------pro2Top
-        var pro2Top = $('#pro2').offset().top;
-        // console.log("aboutTop = ", proTop);
-        // khi scroll tới độ cao của pro2 thì sẽ chạy
-        if (pro2Top === 0) {
-          tlm
-            .staggerFrom("#pro2 .pro1-back div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
-            .staggerFrom("#pro2 .pro1-text h2, #pro2 .pro1-text a, #pro2 .pro1-text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
-            .staggerFrom("#pro2 .pro-text-icon img", .5, { opacity: 0, autoAlpha: 0, scale: 1 }, .2)
-            .from(".frame", .3, { opacity: 0 })
-          setTimeout(function () { banner() }, 2500);
-
-        }
-
-        //-----------pro3Top
-        var pro3Top = $("#pro3").offset().top;
-        if (pro3Top === 0) {
-          tlm
-            .staggerFrom("#pro3 .text h2, #pro3 .text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
-            .from("#pro3 .back-img", .5, { opacity: 0, y: 100 })
-        }
-
-        //-----------contactTop
-        var contactTop = $('#contact').offset().top;
-        // console.log(contactTop);
-        if (contactTop === 0) {
-          var tlt = new TimelineLite();
-          tlt
-            .staggerFrom("#contact  div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
-            .staggerFrom(".contact-back-icon img", .5, { scaleX: 1, autoAlpha: 0, delay: 1 }, .5)
-            .staggerFrom(".contact-back-icon i", .5, { scaleX: 1, autoAlpha: 0 })
-        }
-
-
-        //-----------sitemapTop
-        var sitemapTop = $('#sitemap').offset().top;
-        // console.log(sitemapTop);
-
-        let sitemapTime = true;
-        if (sitemapTop === 0 && sitemapTime === true) {
-          sitemap();
-          sitemapTime = false;
-        }
-
-      }, true)
-			} else{
-				var tlm = new TimelineLite();
-//				var aboutTop = $('#about').offset().top;
-//				if (aboutTop === 0) {
-          tlm.to(".about-black", .3, { opacity: 0, display: "none" });
-//          aboutAnimation(typeText);
-//          function aboutAnimation(fun) {
-//            setTimeout(function () { fun() }, 2000);
-//          }
-//        }
-				setTimeout(setInterval(typeText(), 50), 100);
-				sitemap();
-			}
-			
-function typeText() {
-            // setTimeout(setInterval(frameLoop(), 50), 100);
-
-            var loopTimer = setInterval(function () { frameLoop() }, 50);
-            function frameLoop() {
-              // console.log("run");
-              if (myArray.length > 0) {
-                $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
-              } else {
-                clearInterval(loopTimer);
-              }
             }
+
+          } else {
+            tlm.set("#about .about-black", { opacity: 1, display: "block" });
+
           }
+
+          //------------skillTop
+          var skillTop = $('#service').offset().top;
+          // console.log(skillTop);
+
+          if (skillTop === 0) {
+            tlm.to("#service .about-black", .5, { opacity: 0, display: "none" });
+            tlm
+              // .from("#service h2:first-child", .5, {autoAlpha: 0, delay: .5})
+              .staggerFrom("#service .myrow div", .2, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+              .staggerFrom(".mycol ul li", .2, { x: 10, autoAlpha: 0 }, .2)
+          }
+          else {
+            tlm.set("#service .about-black", { opacity: 1, display: "block" });
+
+          }
+
+          //--------------productTop
+          // var productTop = $('#product').offset().top;
+          // if (productTop === 0) {
+          //   tlm
+          //     .staggerFrom("#product .btf:nth-child(odd)", .2, { scale: 0, autoAlpha: 0 }, .2)
+          //     .staggerFrom("#product .btf:nth-child(even)", .2, { scale: 0, autoAlpha: 0 }, .2)
+          // }
+
+          //-------------pro1Top
+          var pro1Top = $('#pro1').offset().top;
+          // if (pro1Top === 0) {
+          //   tlm
+          //     .staggerFrom("#pro1 .pro1-back div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+          //     .staggerFrom("#pro1 .pro1-text h2, #pro1 .pro1-text a, #pro1 .pro1-text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
+          //     .staggerFrom("#pro1 .pro-text-icon img", .5, { opacity: 0, autoAlpha: 0, scale: 1 }, .2)
+          //     .from("#pro1 .pro1-slide", .5, { opacity: 0, autoAlpha: 0 })
+          //     .to("#pro1 .pro1-slide img", .5, { className: "+=pro1-slide-shadow" })
+          // }
+
+          //-----------pro2Top
+          var pro2Top = $('#pro2').offset().top;
+          // console.log("aboutTop = ", proTop);
+          // khi scroll tới độ cao của pro2 thì sẽ chạy
+          if (pro2Top === 0) {
+            tlm
+              // .staggerFrom("#pro2 .pro1-back div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+              // .staggerFrom("#pro2 .pro1-text h2, #pro2 .pro1-text a, #pro2 .pro1-text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
+              // .staggerFrom("#pro2 .pro-text-icon img", .5, { opacity: 0, autoAlpha: 0, scale: 1 }, .2)
+              .from(".frame", .3, { opacity: 0 })
+            setTimeout(function () { banner() }, 2500);
+
+          }
+
+          //-----------pro3Top
+          var pro3Top = $("#pro3").offset().top;
+          // if (pro3Top === 0) {
+          //   tlm
+          //     .staggerFrom("#pro3 .text h2, #pro3 .text p", .5, { opacity: 0, autoAlpha: 0, x: -20 }, .2)
+          //     .from("#pro3 .back-img", .5, { opacity: 0, y: 100 })
+          // }
+
+          //-----------contactTop
+          var contactTop = $('#contact').offset().top;
+          // console.log(contactTop);
+          // if (contactTop === 0) {
+          //   var tlt = new TimelineLite();
+          //   tlt
+          //     .staggerFrom("#contact  div", .5, { opacity: 0, autoAlpha: 0, delay: .2 }, .2)
+          //     .staggerFrom(".contact-back-icon img", .5, { scaleX: 1, autoAlpha: 0, delay: 1 }, .5)
+          //     .staggerFrom(".contact-back-icon i", .5, { scaleX: 1, autoAlpha: 0 })
+          // }
+
+
+          //-----------sitemapTop
+          var sitemapTop = $('#sitemap').offset().top;
+          // console.log(sitemapTop);
+
+          let sitemapTime = true;
+          if (sitemapTop === 0 && sitemapTime === true) {
+            sitemap();
+            sitemapTime = false;
+          }
+
+        }, true)
+      } else {
+        var tlm = new TimelineLite();
+        //				var aboutTop = $('#about').offset().top;
+        //				if (aboutTop === 0) {
+        tlm.to(".about-black", .3, { opacity: 0, display: "none" });
+        //          aboutAnimation(typeText);
+        //          function aboutAnimation(fun) {
+        //            setTimeout(function () { fun() }, 2000);
+        //          }
+        //        }
+        setTimeout(setInterval(typeText(), 50), 100);
+        sitemap();
+      }
+
+      function typeText() {
+        // setTimeout(setInterval(frameLoop(), 50), 100);
+
+        var loopTimer = setInterval(function () { frameLoop() }, 30);
+        function frameLoop() {
+          // console.log("run");
+          if (myArray.length > 0) {
+            $('#mytypingText').text($('#mytypingText').text() + myArray.shift());
+          } else {
+            clearInterval(loopTimer);
+          }
+        }
+      }
       //---------------- end scroll ----------------
 
       //---------------- banner ----------------
